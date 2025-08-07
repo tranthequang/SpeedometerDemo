@@ -27,7 +27,7 @@ struct GaugeView: View {
                         gradient: Gradient(colors: ColorPalette.outerCircleGradient),
                         center: .center,
                         startRadius: 0,
-                        endRadius: 180
+                        endRadius: 150
                     )
                 )
                 .frame(width: 328, height: 328)
@@ -63,20 +63,34 @@ struct GaugeView: View {
                 .fill(Color.black)
                 .frame(width: 61.8, height: 61.8)
                 .rotationEffect(.degrees(180))
-                .shadow(color: Color.black, radius: 3.0)
+                .shadow(color: Color.black.opacity(0.5), radius: 2.0, y: 2)
             
             ForEach(Array(viewModel.ticks.enumerated()), id: \.offset) { index, tick in
                 let angle = Angle(degrees: startAngle + sweepAngle * Double(index) / Double(Swift.max(viewModel.ticks.count - 1, 1)))
                 let suffix = (index == viewModel.ticks.count - 1) ? "+" : ""
+                
+                let label = "\(SpeedFormatter.format(tick))\(suffix)"
+                let length = label.count
+                let baseSize: CGFloat = 285
+                let offset: CGFloat = {
+                    if length >= 5 { return -20 }
+                    else if length == 4 { return 14 }
+                    else if length == 3 { return -3 }
+                    else if length == 2 { return 0 }
+                    else { return 5 }
+                }()
+                let frameSize = baseSize + offset
                 VStack {
-                    Text("\(SpeedFormatter.format(tick))\(suffix)" )
+                    Text(label)
                         .foregroundStyle(Color.white)
                         .font(Font.custom("RobotoCondensed-Bold", size: 16))
+                        .minimumScaleFactor(0.6)
+                        .lineLimit(1)
                         .rotationEffect(-angle)
                     Spacer()
                 }
                 .rotationEffect(angle)
-                .frame(width: 280, height: 280)
+                .frame(width: frameSize, height: frameSize)
             }
 
             NeedleView(angle: needleAngle)

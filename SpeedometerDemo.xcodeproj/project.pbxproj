@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2A584CF12E4472C900F15F0C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A584CF02E4472C900F15F0C /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		2A584CF02E4472C900F15F0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2A5943372E3E80C8003E6AAB /* SpeedometerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedometerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +52,7 @@
 			children = (
 				2A5943392E3E80C8003E6AAB /* SpeedometerDemo */,
 				2A5943382E3E80C8003E6AAB /* Products */,
+				2A584CF02E4472C900F15F0C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A584CF12E4472C900F15F0C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

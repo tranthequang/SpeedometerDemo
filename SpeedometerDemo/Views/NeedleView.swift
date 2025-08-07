@@ -14,8 +14,8 @@ struct NeedleView: View {
         ZStack {
             Capsule()
                 .fill(ColorPalette.primaryColor)
-                .frame(width: 5, height: 80)
-                .offset(y: -40)
+                .frame(width: 5, height: 120)
+                .offset(y: -60)
         }
         .rotationEffect(angle, anchor: .center)
     }
