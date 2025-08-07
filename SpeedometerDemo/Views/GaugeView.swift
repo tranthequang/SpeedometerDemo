@@ -17,8 +17,8 @@ struct GaugeView: View {
 
     var body: some View {
         ZStack {
-            let startAngle: Double = 250
-            let sweepAngle: Double = 220
+            let startAngle: Double = 261
+            let sweepAngle: Double = 198
             
             Circle()
                 .trim(from: 0.0, to: 1.0)
@@ -42,7 +42,7 @@ struct GaugeView: View {
                     ColorPalette.primaryColor,
                     style: StrokeStyle(lineWidth: 10, lineCap: .round)
                 )
-                .rotationEffect(.degrees(160))
+                .rotationEffect(.degrees(171))
                 .frame(width: 318, height: 318)
 
             Circle()
